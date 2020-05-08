@@ -1,0 +1,6 @@
+
+.weatherForecast {
+-webkit-box-shadow: inset 6px 10px 8px -7px rgba(0,0,0,0.73);
+-moz-box-shadow: inset 6px 10px 8px -7px rgba(0,0,0,0.73);
+box-shadow: inset 6px 10px 8px -7px rgba(0,0,0,0.73);
+}

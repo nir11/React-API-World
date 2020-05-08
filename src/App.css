@@ -1,0 +1,218 @@
+
+.header {
+  text-align: center;
+  background-color: rgb(57,111,176);
+  /* background-color: #1976d2; */
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header--hidden {
+  top: -50px;
+}
+
+.header-text {
+  margin:0;
+  color:rgb(252, 253, 254);
+  float:left;
+  margin-right: 40px;
+}
+
+.header-flags {
+  float:left;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: white;
+}
+
+h3 {
+  text-align: center;
+}
+
+h6 {
+  margin:0px;
+}
+
+.powered_by_container{
+  position: absolute; 
+  right: 0px;
+  margin-right: 10px;
+  
+}
+
+.powered_by_name {
+  /* background-color: #1a3351;  */
+  /* color: #1a3351; */
+  color: #C1C3C4;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px 10px; 
+  font-weight: bold; 
+  border-radius: 5px;
+}
+.github_icon {
+  transform: scale(1.5);
+} 
+
+.linkedin_icon {
+  transform: scale(1.7);
+  /* color: rgb(0,119,181);  */
+  color: #23238E;
+}
+
+
+.article, .socialMediasContainer{
+display: inline-block;
+margin-top: 50px;
+}
+.article{
+  width: 50%;
+  float: right;;
+  margin-right: 100px;
+ }
+
+.socialMediasContainer{
+  text-align: right;
+  width: 30%;
+  margin-left: 100px;
+  padding-right: 20px;  
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  padding: 8px;
+  margin: auto;
+  border: 1px solid #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+}
+h1{
+  text-align: center;
+}
+.labelSocialMedias {
+  display: block;
+  background-color: rgb(7, 55, 99);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 12px 3px 12px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.labelNews {
+  display: block;
+  background-color: teal;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 12px 3px 12px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.labelWeather {
+  display: block;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 12px 3px 12px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 8px;
+  
+}
+
+.insideSocialMedias {
+  padding-right: 20px;
+}
+
+.my-collapsible {
+  /* background-color: white; */
+}
+
+.tabList {
+  background-color: blueviolet;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding-right: 50px;
+}
+
+.youtubeTrendingChip{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 23px;
+  float: left;
+  width: 250px;
+  padding: 0 15px;
+	background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+	background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+	background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+	background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+	background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%);
+	color: #fff;
+	border-radius: 50% / 11%;
+	box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.67);
+  font-weight: bold;
+
+}
+
+.instagramChip{ width:100px; height:100px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 17px;
+  float: left;
+  width: 250px;
+  background: #0f0f0f; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.67);
+  font-weight: bold;
+}
+
+.youtubeDiv{
+  text-align: center;
+  /* border: 3px solid rgb(185, 35, 35); */
+  margin-bottom: 10px;
+  /* border-radius: 15px; */
+  border-left: 2px solid blueviolet;
+
+}
+.instagramDiv {
+  border-left: 2px solid blueviolet;
+}
+
+.socialMediasScroller {
+  overflow-y: scroll;
+  height: 1100px;
+  width: 385px;
+  display: block;
+  scrollbar-color: white darkgray;
+  /* scrollbar-width: thin; */
+  scroll-behavior: smooth;
+}
+
+.weatherForecastDiv {
+  background-color: lightblue;
+  margin: 3px;
+}
+

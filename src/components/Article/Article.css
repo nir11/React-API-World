@@ -1,0 +1,50 @@
+
+.singleArticle {
+  height: 200px;
+}
+  .articleText, .img_article{
+    display: inline-block;
+  }
+
+  .articleText{
+    width: 70%;
+    color: rgb(28, 44, 28);
+  }
+
+  .img_article {
+    /* height: 100%; */
+    width: 60px;
+  }
+
+  .frame{
+    /* border: 1px solid black;
+    box-shadow: 1px; */
+    margin: 16px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    width: 500px;
+  }
+
+  /* .article div:nth-child(even) {background: #CCC}
+  .article div:nth-child(odd) {background: #FFF} */
+  p{
+    font-style: italic;
+    margin: 0px;
+  }
+  
+  h5 {
+    margin: 0px;
+  }
+
+  .content {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: 'white'
+  }
+
+  

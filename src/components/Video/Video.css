@@ -1,0 +1,62 @@
+
+.videoDiv {
+}
+
+.descriptionDiv .imgDiv{
+    display: inline-block;
+}
+
+.descriptionDiv {
+    width: 60%;
+}
+
+.imgVide {
+    width: 300px;
+}
+
+.videoPosition {
+    /* text-align: center;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    display: block;
+    font: 32px Arial, sans-serif;
+    margin-top: 10px;
+    margin-left: 10px; */
+
+}
+
+.videoPosition {
+    width: 36px;
+    height: 36px;
+    color: #666;
+    display: block;
+    font-size: xx-large;
+    margin-bottom: 23px;
+
+}
+
+.ImageLink {
+    height: 230px;
+    width: 350px;
+    position: relative;
+    display: block;
+}
+.ItemImage {
+    height: 300px;
+    width: 350px;
+}
+.OverlayIcon {
+    position: absolute;
+    top: 80px;
+    left: 145px;
+    color: white;
+}
+
+.videoLine {
+    width: 300px;
+}
