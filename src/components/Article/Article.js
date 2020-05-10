@@ -32,14 +32,15 @@ const Article = (props) => {
       fontStyle: 'normal'  
     },
     image: {
-      width: 128,
+      width: 158,
       height: 128,
-      paddingTop: '40px'
+      paddingTop: '10px'
     },
     img: {
       margin: 'auto',
       display: 'block',
-      width: 450,
+      width: 150,
+      height: 120
     },
     sourceName: {
     color: 'honeydew',
@@ -82,17 +83,17 @@ const Article = (props) => {
     colorClasses.push(classes.red); 
   }
 
-  var content;
-  if(props.selectedCountry === "IL" || props.selectedCountry === "RU" || props.selectedCountry === "KR" ||
-     props.selectedCountry === "UA" || props.selectedCountry === "JP" || props.selectedCountry === "CN" ||
-     props.selectedCountry === "TW" || props.selectedCountry === "EG" || props.selectedCountry === "HK" ||
-     props.selectedCountry === "GR" || props.selectedCountry === "LT" || props.selectedCountry === "LV" ||
-     props.selectedCountry === "TH"){
-    content=props.description;
-  }
-  else{
-    content=props.content;
-  }
+  var content=props.description;
+  // if(props.selectedCountry === "IL" || props.selectedCountry === "RU" || props.selectedCountry === "KR" ||
+  //    props.selectedCountry === "UA" || props.selectedCountry === "JP" || props.selectedCountry === "CN" ||
+  //    props.selectedCountry === "TW" || props.selectedCountry === "EG" || props.selectedCountry === "HK" ||
+  //    props.selectedCountry === "GR" || props.selectedCountry === "LT" || props.selectedCountry === "LV" ||
+  //    props.selectedCountry === "TH"){
+  //   content=props.description;
+  // }
+  // else{
+  //   content=props.content;
+  // }
 
 
     return (
@@ -128,7 +129,7 @@ const Article = (props) => {
               </Grid>
               <Grid item>
               <ButtonBase className={classes.image}>
-                <img className={classes.img_article} alt="complex" src={props.urlToImage} />
+                <img className={classes.img} alt="complex" src={props.urlToImage} />
               </ButtonBase>
             </Grid>
             {/* <Grid item>

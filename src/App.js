@@ -19,6 +19,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import country from 'country-list-js';
 import Headroom from 'react-headroom';
+import normalizeLocale from "normalize-locale";
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button"; 
 
 
@@ -39,8 +40,11 @@ class App extends Component {
   
   fetchData(selectedCountry, countryHashtagName, capital) {
 
-    // News API
-    fetch("http://newsapi.org/v2/top-headlines?country=" + selectedCountry + '&apiKey=' + `${process.env.REACT_APP_NEWS_API_KEY}`)
+    var selectedCountryLangCode = normalizeLocale.normalizeLocale(selectedCountry).languages[0];
+    console.log(selectedCountryLangCode + "-" + selectedCountry);
+
+    //News API
+    fetch('https://api.breakingapi.com/news?type=headlines&locale=' + selectedCountryLangCode + '-' + selectedCountry + '&api_key=' + `${process.env.REACT_APP_NEWS_API_KEY}`)
     .then(res => res.json())
     .then((data) => {
       let dataArticle = data.articles.map(article => {
@@ -50,11 +54,11 @@ class App extends Component {
               counter={++this.state.articleCounter}
               source={article.source.name} 
               title={article.title} 
-              content={article.content}
-              description={article.description}
+              // content={article.content}
+              description={article.snippet}
               selectedCountry={selectedCountry}
-              url={article.url}
-              urlToImage={article.urlToImage}
+              url={article.link}
+              urlToImage={article.primary_image_link}
               />             
           </div>
         )
@@ -131,7 +135,8 @@ class App extends Component {
       space_stripped_str = space_stripped_str.substring(0, space_stripped_str.indexOf(','));
     }
 
-    this.setState({countryHashtagName: space_stripped_str})
+    this.setState({countryHashtagName: space_stripped_str});
+
 
     this.fetchData(selectedCountry, space_stripped_str, found.capital);
 
@@ -199,7 +204,7 @@ class App extends Component {
                         <div className="socialMediasScroller">
                           <div className="youtubeDiv">
                             <Chip className="youtubeTrendingChip"
-                              label={"YouTubeTrending "+ this.state.countryName}
+                              label={"YouTubeTrending - "+ this.state.countryName}
                             color="secondary"
                             />   
                             <br/><br/>
