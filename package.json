@@ -14,8 +14,6 @@
     "dayjs": "^1.8.23",
     "enzyme": "^3.11.0",
     "google-news-json": "^1.0.3",
-    "jquery": "^1.9.1",
-    "jss": "^10.1.1",
     "mdbreact": "^4.25.4",
     "node-gnews": "^1.0.3",
     "normalize-locale": "0.0.2",
