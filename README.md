@@ -7,7 +7,7 @@ A simple React app that displays the latest information of a chosen country from
 - Instagram API
 - Youtube API
 
-![Home page]https://github.com/nir11/React-API-World/blob/master/public/screenshot.png)
+![Home Page](https://github.com/nir11/React-API-World/blob/master/public/screenshot.png)
 
 
 ## Getting started
