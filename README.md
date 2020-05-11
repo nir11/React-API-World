@@ -3,11 +3,12 @@
 
 A simple React app that displays the latest information of a chosen country from several API sources:
 
-- Breaking API
+- Breaking News API
 - Instagram API
 - Youtube API
 
-![Home page]https://github.com/nir11/React-API-World/public/screenshot.png)
+![Home page]https://github.com/nir11/React-API-World/blob/master/public/screenshot.png)
+
 
 ## Getting started
 
@@ -23,6 +24,7 @@ REACT_APP_YOUTUBE_API_KEY = 'The API key you obtained from developers.google.com
 ```
 
 In the project directory, you can run:
+
 
 ### `npm start`
 
