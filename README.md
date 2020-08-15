@@ -1,9 +1,11 @@
 
 # React-API-World [![Netlify Status](https://api.netlify.com/api/v1/badges/142b6577-41bb-4d21-846a-096cd87214af/deploy-status)](https://app.netlify.com/sites/react-api-world/deploys)
 
+[Live Demo](https://react-api-world.netlify.app/)
+
 A simple React app that displays the latest information of a chosen country from several API sources:
 
-- Breaking News API
+- News API
 - Instagram API
 - Youtube API
 
@@ -13,13 +15,13 @@ A simple React app that displays the latest information of a chosen country from
 ## Getting started
 
 Sign up and get to following API keys:
-- [breakingapi.com](https://breakingapi.com/) to get an API key.
-- [developers.google.com](https://developers.google.com/youtube/v3) to get an API key.
+- [newsapi.com](https://newsapi.org/)
+- [developers.google.com](https://developers.google.com/youtube/v3)
 - Fork the project and clone it locally.
 - Create a file at the root of the project called `.env.local` with the following contents:
 
 ```sh
-REACT_APP_NEWS_API_KEY = 'The API key you obtained from breakingapi.com'
+REACT_APP_NEWS_API_KEY = 'The API key you obtained from newsapi.org'
 REACT_APP_YOUTUBE_API_KEY = 'The API key you obtained from developers.google.com'
 ```
 
