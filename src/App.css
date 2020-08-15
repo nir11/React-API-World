@@ -73,6 +73,22 @@ margin-top: 50px;
   margin-right: 100px;
  }
 
+ .loader {
+  width: 50%;
+  float: right;
+  margin-right: 20px;
+ }
+
+ .loaderInstagram {
+  width: 30%;
+  margin-left: 80px;;
+ }
+
+ .loaderYoutube {
+  width: 30%;
+  margin-left: 120px;;
+ }
+
 .socialMediasContainer{
   text-align: right;
   width: 30%;

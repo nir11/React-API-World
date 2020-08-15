@@ -29,7 +29,7 @@ const Article = (props) => {
       color: 'white',
       marginTop: '5px',
       marginBottom: '3px',
-      fontStyle: 'normal'  
+      fontStyle: 'normal'
     },
     image: {
       width: 158,
@@ -44,7 +44,7 @@ const Article = (props) => {
     },
     sourceName: {
     color: 'honeydew',
-    fontSize: 'small'
+    fontSize: 'small',
     },
     link: {
       textDecoration: 'none'
@@ -112,19 +112,15 @@ const Article = (props) => {
       <div>
         <a className={classes.link} href={props.url} target="_blank">
           <Paper className={colorClasses.join(' ')}>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12} sm container>
               <Grid item>
                   <Typography varian="body2" style={{ cursor: 'pointer'}}>      
                   <b className={classes.title}>{props.title}</b>
                   </Typography>
-                </Grid>
-                <Grid item xs container direction="column" spacing={2}>
-                  <Grid item xs>
-                    <Typography className={classes.content} variant="body2" color="textSecondary">
+                  <Typography className={classes.content} variant="body2" color="textSecondary">
                       {content}
                     </Typography>
-                  </Grid>
                 </Grid>
               </Grid>
               <Grid item>
@@ -132,16 +128,12 @@ const Article = (props) => {
                 <img className={classes.img} alt="complex" src={props.urlToImage} />
               </ButtonBase>
             </Grid>
-            {/* <Grid item>
-                <Typography variant="subtitle1">{props.source}</Typography>
-              </Grid> */}
           </Grid>
           <span className={classes.sourceName}><i>{props.source}</i></span>
         </Paper>
         
       <br/>
       </a>
-
        </div>
       )
     };

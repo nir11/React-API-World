@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.34",
+    "@emotion/styled": "^10.0.27",
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -11,6 +14,7 @@
     "@testing-library/user-event": "^7.2.1",
     "country-list-js": "^3.1.7",
     "dayjs": "^1.8.23",
+    "emotion-theming": "^10.0.27",
     "enzyme": "^3.11.0",
     "mdbreact": "^4.25.4",
     "normalize-locale": "0.0.2",
@@ -23,6 +27,7 @@
     "react-open-weather": "^0.6.2",
     "react-scripts": "3.4.1",
     "react-scroll-up-button": "^1.6.4",
+    "react-spinners": "^0.9.0",
     "react-tabs": "^3.1.0",
     "react-twitter-embed": "^3.0.3"
   },

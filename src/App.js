@@ -21,6 +21,8 @@ import country from 'country-list-js';
 import Headroom from 'react-headroom';
 import normalizeLocale from "normalize-locale";
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button"; 
+import MoonLoader from "react-spinners/ClipLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 
 class App extends Component {
@@ -29,22 +31,56 @@ class App extends Component {
     countryName: 'United States',
     countryHashtagName: 'UnitedStates',
     capitalCityName: 'Washington',
+    articlesLoader: true,
     articles: [],
     videos: [],
+    videosLoader: true,
     instagramTopPosts: [],
+    instagramLoader: true,
     youtubeCounter: 0,
     articleCounter: 0,
     weather: []
   }
   
   
-  fetchData(selectedCountry, countryHashtagName, capital) {
+  async fetchData(selectedCountry, countryHashtagName, capital) {
 
     var selectedCountryLangCode = normalizeLocale.normalizeLocale(selectedCountry).languages[0];
     console.log(selectedCountryLangCode + "-" + selectedCountry);
+    this.setState({
+      articlesLoader: true,
+      articles: [],
+      videosLoader: true,
+      videos: [],
+      instagramLoader: true,
+      instagramTopPosts: []
+    })
+    //News API 
+    // await fetch('https://api.breakingapi.com/news?type=headlines&locale=' + selectedCountryLangCode + '-' + selectedCountry + '&api_key=' + `${process.env.REACT_APP_NEWS_API_KEY}`)
+    // .then(res => res.json())
+    // .then((data) => {
+    //   let dataArticle = data.articles.map(article => {
+    //     return (
+    //       <div>
+    //         <Article 
+    //           counter={++this.state.articleCounter}
+    //           source={article.source.name} 
+    //           title={article.title} 
+    //           // content={article.content}
+    //           description={article.snippet}
+    //           selectedCountry={selectedCountry}
+    //           url={article.link}
+    //           urlToImage={article.primary_image_link}
+    //           />             
+    //       </div>
+    //     )
+    //   });
+    //   this.setState({articles: dataArticle})
+    // })
+    // .catch(console.log)
 
-    //News API
-    fetch('https://api.breakingapi.com/news?type=headlines&locale=' + selectedCountryLangCode + '-' + selectedCountry + '&api_key=' + `${process.env.REACT_APP_NEWS_API_KEY}`)
+     //News API
+    fetch('https://newsapi.org/v2/top-headlines?country=' + selectedCountry + '&apiKey=' + `${process.env.REACT_APP_NEWS_API_KEY}`)
     .then(res => res.json())
     .then((data) => {
       let dataArticle = data.articles.map(article => {
@@ -55,20 +91,22 @@ class App extends Component {
               source={article.source.name} 
               title={article.title} 
               // content={article.content}
-              description={article.snippet}
+              description={article.description}
               selectedCountry={selectedCountry}
               url={article.link}
-              urlToImage={article.primary_image_link}
+              urlToImage={article.urlToImage}
               />             
           </div>
         )
       });
+      this.setState({articlesLoader: false})
       this.setState({articles: dataArticle})
     })
     .catch(console.log)
 
+
     // Youtube API
-    fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=" + selectedCountry + "&key=" + `${process.env.REACT_APP_YOUTUBE_API_KEY}`)
+    await fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=" + selectedCountry + "&key=" + `${process.env.REACT_APP_YOUTUBE_API_KEY}`)
     .then(res => res.json())
     .then((data) => {
       let dataVideos = data.items.map(video => {
@@ -85,12 +123,13 @@ class App extends Component {
           </div>
         )
       });
+      this.setState({videosLoader: false})
       this.setState({videos: dataVideos})
     })
     .catch(console.log)
 
     // Instagram API
-    fetch("https://www.instagram.com/explore/tags/" + countryHashtagName + "/?__a=1")
+    await fetch("https://www.instagram.com/explore/tags/" + countryHashtagName + "/?__a=1")
     .then(res => res.json())
     .then((data) => {
       let instagramTopPostsData = data.graphql.hashtag.edge_hashtag_to_top_posts.edges.map(insta => {
@@ -102,6 +141,7 @@ class App extends Component {
           </div>
         )
       });
+      this.setState({instagramLoader: false})
       this.setState({instagramTopPosts: instagramTopPostsData})
     })
     .catch(console.log)  
@@ -201,23 +241,29 @@ class App extends Component {
                       </TabList>
 
                       <TabPanel>        
-                        <div className="socialMediasScroller">
+                        <div className="socialMediasScroller">                       
                           <div className="youtubeDiv">
                             <Chip className="youtubeTrendingChip"
                               label={"YouTubeTrending - "+ this.state.countryName}
                             color="secondary"
-                            />   
+                            />      
+                           <div className="loaderYoutube">
+                            <BeatLoader className="loader" loading={this.state.videosLoader} />
+                            </div>                         
                             <br/><br/>
                             {this.state.videos}
                           </div>
                         </div>   
                       </TabPanel>
                       <TabPanel>  
-                        <div className="socialMediasScroller">     
+                        <div className="socialMediasScroller">  
                           <div className="instagramDiv">
                           <Chip className="instagramChip"
                             label={"Top Posts #"+ this.state.countryHashtagName}
-                          color="secondary"/>   
+                          color="secondary"/>  
+                          <div className="loaderInstagram">
+                            <BeatLoader className="loader" loading={this.state.instagramLoader} />
+                            </div>   
                           {this.state.instagramTopPosts}
                           </div>
                         </div>
@@ -272,10 +318,12 @@ class App extends Component {
                   <span className="labelNews" onClick={toggle} variant="secondary" size="lg" block>
                     Latest News   
                   </span>
+                  <div className="loader">
+                  <MoonLoader className="loader" loading={this.state.articlesLoader} />
+                  </div>
                   <div className="my-collapsible__content" ref={setCollapsibleElement}>
                   <div>
-   
-                    {this.state.articles}</div>
+                      {this.state.articles}</div>
                   </div>
                         
                 </div>
