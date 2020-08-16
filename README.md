@@ -15,7 +15,7 @@ A simple React app that displays the latest information of a chosen country from
 ## Getting started
 
 Sign up and get to following API keys:
-- [newsapi.com](https://newsapi.org/)
+- [newsapi.org](https://newsapi.org/)
 - [developers.google.com](https://developers.google.com/youtube/v3)
 - Fork the project and clone it locally.
 - Create a file at the root of the project called `.env.local` with the following contents:
